@@ -13,9 +13,9 @@ void test_New_Message(void) {
 }
 
 void test_DecodeDescribedFormatCode(void) {
-    char formatBuff[] = {0x01, 0x11,  APPLICATION_DATA};
+    char formatBuff[] = {0x03, 0x11,  APPLICATION_DATA};
     DescribedFormatCode d = decodeDescribedFormatCode(formatBuff);
-    TEST_ASSERT_EQUAL_CHAR(0x01, d.v1);
+    TEST_ASSERT_EQUAL_CHAR(0x03, d.v1);
     TEST_ASSERT_EQUAL_CHAR(0x11, d.v2);
     TEST_ASSERT_EQUAL_CHAR( 0x75, d.formatCode);
     TEST_ASSERT_EQUAL_INT(3, d.size);
