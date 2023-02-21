@@ -2,7 +2,6 @@
 #include "amqp_wire_formatting.h"
 
 #include <stdio.h>
-#include <memory.h>
 
 
 PMessage_t newMessage() {

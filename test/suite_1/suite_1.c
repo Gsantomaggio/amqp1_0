@@ -3,8 +3,8 @@
 //
 
 
-#include "unity/src/unity.h"
-#include "library.h"
+#include <unity.h>
+#include <library.h>
 
 
 void test_New_Message(void) {
