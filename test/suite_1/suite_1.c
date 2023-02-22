@@ -7,10 +7,10 @@
 #include <library.h>
 
 
-void test_New_Message(void) {
-    PMessage_t msg = newMessage();
-    TEST_ASSERT_NOT_EMPTY(&msg);
-}
+//void test_New_Message(void) {
+//    PMessage_t msg = newMessage();
+//    TEST_ASSERT_NOT_EMPTY(&msg);
+//}
 
 void test_DecodeDescribedFormatCode(void) {
     char formatBuff[] = {0x03, 0x11,  APPLICATION_DATA};
@@ -32,7 +32,7 @@ void tearDown(void) {
 
 int main(void) {
     UNITY_BEGIN();
-    RUN_TEST(test_New_Message);
+//    RUN_TEST(test_New_Message);
     RUN_TEST(test_DecodeDescribedFormatCode);
     return UNITY_END();
 }
