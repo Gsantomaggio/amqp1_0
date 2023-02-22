@@ -19,9 +19,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-
-      - name: Checkout repository
-        uses: actions/checkout@v2
         with:
           submodules: 'true'
           token: ${{ secrets.PAT_TOKEN }}
