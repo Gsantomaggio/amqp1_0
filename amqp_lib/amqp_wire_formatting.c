@@ -13,16 +13,40 @@ int read_char(char *source_buffer, char *out_value) {
     return offset + sizeof(char);
 }
 
-int read_application_data(char *source_buffer, PMessage_t message) {
-
+int read_int(char *source_buffer, int *out_value) {
     int offset = 0;
+    char tmp[sizeof(int)];
+    memcpy(tmp, source_buffer + offset, sizeof(int));
+    *out_value = (tmp[0] << 24) + (tmp[1] << 16) + (tmp[2] << 8) + tmp[3];
+    return offset + sizeof(int);
+}
+
+
+int read_buffer(char *source_buffer, char *out_value, size_t len) {
+    memcpy(out_value, source_buffer, len);
+    return len;
+}
+
+int read_type(char *source_buffer, char *out_type) {
+    return read_char(source_buffer, out_type);
+}
+
+int read_application_data(char *source_buffer, PMessage_t message) {
+    size_t offset = 0;
     char type;
     offset += read_type(source_buffer, &type);
     switch (type) {
-        case (char) 0xa0: {
+        case FORMAT_CODE_VBIN8: {
             char len;
             offset += read_char(source_buffer + offset, &len);
-            message->data = malloc(len + 1);
+            message->data = malloc(len);
+            offset += read_buffer(source_buffer + offset, message->data, len);
+        }
+            break;
+        case FORMAT_CODE_Vbin32: {
+            int len;
+            offset += read_int(source_buffer + offset, &len);
+            message->data = malloc(len);
             offset += read_buffer(source_buffer + offset, message->data, len);
         }
             break;
@@ -30,19 +54,4 @@ int read_application_data(char *source_buffer, PMessage_t message) {
     return offset;
 
 }
-
-int read_buffer(char *source_buffer, char *out_value, size_t len) {
-    memcpy(out_value, source_buffer, len);
-    return len;
-
-
-}
-
-int read_type(char *source_buffer, char *out_type) {
-    return read_char(source_buffer, out_type);
-}
-
-
-
-
 

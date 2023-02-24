@@ -1,6 +1,6 @@
 add_library(amqp_lib STATIC
-        library.h
-        library.c
+        decode.h
+        decode.c
         amqp_wire_formatting.h
         amqp_wire_formatting.c
         )
