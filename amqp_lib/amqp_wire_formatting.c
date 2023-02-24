@@ -16,7 +16,7 @@ int read_buffer(char *source_buffer, char *out_value) {
     char type;
     offset += read_type(source_buffer, &type);
     switch (type) {
-        case 0xa0: {
+        case (char)0xa0: {
             char len;
             offset += read_char(source_buffer + offset, &len);
             offset += read_buffer(source_buffer + offset, out_value);
