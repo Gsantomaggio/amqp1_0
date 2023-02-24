@@ -4,6 +4,10 @@ set(TARGET_GROUP production CACHE STRING "Group to build")
 
 
 add_subdirectory(amqp_lib)
-include(CTest)
-add_subdirectory(external)
-add_subdirectory(test)
+
+
+if (TARGET_GROUP STREQUAL test)
+    include(CTest)
+    add_subdirectory(external)
+    add_subdirectory(test)
+endif ()

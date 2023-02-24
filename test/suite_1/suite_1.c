@@ -5,6 +5,7 @@
 
 #include <unity.h>
 #include <library.h>
+#include <types.h>
 
 
 //void test_New_Message(void) {
@@ -23,7 +24,8 @@ void test_DecodeDescribedFormatCode(void) {
 
 void test_MessageParseApplicationData(void) {
     char formatBuff[] = {0x03, 0x11, APPLICATION_DATA, 0xa0, 0x01, 0x02};
-    Message_t msg = parseMessage(formatBuff);
+    Message_t msg;
+    parseMessage(formatBuff, &msg);
     TEST_ASSERT_NOT_EMPTY(msg.data);
     TEST_ASSERT_EQUAL_CHAR(0x02, msg.data[0]);
 }

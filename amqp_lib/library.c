@@ -2,12 +2,9 @@
 #include "amqp_wire_formatting.h"
 
 #include <stdio.h>
+#include <types.h>
 
 
-Message_t newMessage() {
-    Message_t message;
-    return message;
-}
 
 DescribedFormatCode decodeDescribedFormatCode(char *source_buffer) {
     DescribedFormatCode result;
@@ -19,15 +16,18 @@ DescribedFormatCode decodeDescribedFormatCode(char *source_buffer) {
     return result;
 }
 
-Message_t parseMessage(char *source_buffer) {
+int parseMessage(char *source_buffer, PMessage_t message) {
     DescribedFormatCode formatCode = decodeDescribedFormatCode(source_buffer);
-    Message_t message;
+    int offset = formatCode.size;
+
     switch (formatCode.formatCode) {
         case APPLICATION_DATA:
-            read_buffer(source_buffer, message.data);
+            offset += read_application_data(
+                    source_buffer + offset,
+                    message);
             break;
     }
-    return message;
+    return 0;
 }
 
 
