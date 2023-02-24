@@ -6,5 +6,8 @@
 #define AMQP1_0_AMQP_WIRE_FORMATTING_H
 
 int read_char(char *source_buffer, char *out_value);
+int read_type(char *source_buffer, char *out_value);
+
+int read_buffer(char *source_buffer, char *out_value);
 
 #endif //AMQP1_0_AMQP_WIRE_FORMATTING_H

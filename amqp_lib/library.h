@@ -24,9 +24,9 @@ typedef struct {
 } DescribedFormatCode, *PDescribedFormatCode;
 
 
-PMessage_t newMessage();
+Message_t newMessage();
 
-PMessage_t parseMessage(char *source_buffer);
+Message_t parseMessage(char *source_buffer);
 
 DescribedFormatCode decodeDescribedFormatCode(char *source_buffer);
 
