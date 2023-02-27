@@ -3,11 +3,12 @@
 
 
 #include "types.h"
+#include <stdlib.h>
 
 
-int parseAmqp10MessageBuffer(char *source_buffer, long len, PMessage_t out_message);
+size_t parseAmqp10MessageBuffer(char *source_buffer, long len, PMessage_t out_message);
 
-int decodeDescribedFormatCode(char *source_buffer, PDescribedFormatCode out_described_format_code);
+size_t decodeDescribedFormatCode(char *source_buffer, PDescribedFormatCode out_described_format_code);
 
 
 #endif //AMQP1_0_DECODE_H
