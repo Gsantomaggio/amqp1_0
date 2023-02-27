@@ -114,8 +114,8 @@ int main(void) {
     printf("test_MessageParseApplicationDataV8 \n");
     RUN_TEST(test_MessageParseApplicationDataV8);
     printf("test_MessageParseApplicationDataV32 \n");
-//    RUN_TEST(test_MessageParseApplicationDataV32);
-//    printf("test_MessageParseApplicationDataFromFileBodyV8 \n");
+    RUN_TEST(test_MessageParseApplicationDataV32);
+    printf("test_MessageParseApplicationDataFromFileBodyV8 \n");
 //    RUN_TEST(test_MessageParseApplicationDataFromFileBodyV8);
 //    printf("test_MessageParseApplicationDataFromFileBody32 \n");
 //    RUN_TEST(test_MessageParseApplicationDataFromFileBody32);
