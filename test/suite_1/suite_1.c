@@ -26,9 +26,9 @@ int readAmqpBufferFromFile(char *filename, char *buffer, long *len) {
     *len = ftell(fileptr);             // Get the current byte offset in the file
     rewind(fileptr);                      // Jump back to the beginning of the file
 
-    fread(buffer, sizeof(char), *len, fileptr); // Read in the entire file
+    size_t read = fread(buffer, sizeof(char), *len, fileptr); // Read in the entire file
     fclose(fileptr); // Close the file
-    return 0;
+    return read;
 }
 
 
