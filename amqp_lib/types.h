@@ -16,6 +16,7 @@
 #define FORMAT_CODE_VBIN8 (char)0xa0
 #define FORMAT_CODE_Vbin32 (char)0xb0
 
+
 typedef struct {
     char *data;
 

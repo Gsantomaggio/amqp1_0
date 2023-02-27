@@ -7,9 +7,10 @@
 
 #include <string.h>
 #include <types.h>
+#include <stdlib.h>
 
 int read_char(char *source_buffer, char *out_value);
-int read_int(char *source_buffer, int *out_value);
+int read_int(char *source_buffer, uint32_t *out_value);
 int read_type(char *source_buffer, char *out_value);
 
 int read_buffer(char *source_buffer, char *out_value, size_t len);
