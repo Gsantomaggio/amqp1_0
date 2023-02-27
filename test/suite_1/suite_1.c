@@ -22,6 +22,10 @@ int readAmqpBufferFromFile(char *filename, char *buffer, long *len) {
     strcat(cwd, "/resources/");
     strcat(cwd, filename);
     fileptr = fopen(cwd, "rb");  // Open the file in binary mode
+    if (fileptr == NULL) {
+        perror("can't open file");
+        return 0;
+    }
     fseek(fileptr, 0, SEEK_END);          // Jump to the end of the file
     *len = ftell(fileptr);             // Get the current byte offset in the file
     rewind(fileptr);                      // Jump back to the beginning of the file
@@ -80,8 +84,10 @@ void test_MessageParseApplicationDataFromFileBody32(void) {
     long len;
     readAmqpBufferFromFile("message_body_700", formatBuff, &len);
     Message_t msg;
+    printf("message_body_700 size %d \n", len);
     parseAmqp10MessageBuffer(formatBuff, len, &msg);
     TEST_ASSERT_NOT_EMPTY(msg.data);
+    printf("the len is %d \n", strlen(msg.data));
     TEST_ASSERT_TRUE(strlen(msg.data) == 700);
 }
 
@@ -94,7 +100,7 @@ void test_MessageParseApplicationDataFromFileUnicodeBody32(void) {
     parseAmqp10MessageBuffer(formatBuff, len, &msg);
     TEST_ASSERT_NOT_EMPTY(msg.data);
     char expected[] =
-    "Alan Mathison Turing（1912 年 6 月 23 日 - 1954 年 6 月 7 日）是英国数学家、计算机科学家、逻辑学家、密码分析家、哲学家和理论生物学家。 [6] 图灵在理论计算机科学的发展中具有很大的影响力，用图灵机提供了算法和计算概念的形式化，可以被认为是通用计算机的模型。[7][8][9] 他被广泛认为是理论计算机科学和人工智能之父。 [10]";
+            "Alan Mathison Turing（1912 年 6 月 23 日 - 1954 年 6 月 7 日）是英国数学家、计算机科学家、逻辑学家、密码分析家、哲学家和理论生物学家。 [6] 图灵在理论计算机科学的发展中具有很大的影响力，用图灵机提供了算法和计算概念的形式化，可以被认为是通用计算机的模型。[7][8][9] 他被广泛认为是理论计算机科学和人工智能之父。 [10]";
     TEST_ASSERT_EQUAL_CHAR_ARRAY(expected, msg.data, strlen(expected));
 }
 
