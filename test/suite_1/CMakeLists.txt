@@ -8,3 +8,4 @@ target_link_libraries(suite_1_app
         )
 
 add_test(suite_1_test suite_1_app)
+add_subdirectory(resources)

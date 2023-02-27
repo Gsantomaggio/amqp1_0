@@ -6,7 +6,6 @@
 #include "types.h"
 #include <string.h>
 #include <stdlib.h>
-#include <printf.h>
 
 size_t read_char(char *source_buffer, char *out_value) {
     int offset = 0;
@@ -47,10 +46,8 @@ size_t read_application_data(char *source_buffer, PMessage_t message) {
         case FORMAT_CODE_Vbin32: {
             uint32_t len;
             offset += read_int(source_buffer + offset, &len);
-            printf("up the len here is %d and the offset %d \n", len, offset);
             message->data = malloc(sizeof(char) * len);
             offset += read_buffer(source_buffer + offset, message->data, len);
-            printf("str len here is %d \n", strlen(message->data));
         }
             break;
     }
