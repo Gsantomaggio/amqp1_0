@@ -84,10 +84,8 @@ void test_MessageParseApplicationDataFromFileBody32(void) {
     long len;
     readAmqpBufferFromFile("message_body_700", formatBuff, &len);
     Message_t msg;
-    printf("message_body_700 size %d \n", len);
     parseAmqp10MessageBuffer(formatBuff, len, &msg);
     TEST_ASSERT_NOT_EMPTY(msg.data);
-    printf("the len is %d \n", strlen(msg.data));
     TEST_ASSERT_TRUE(strlen(msg.data) == 700);
 }
 
@@ -115,17 +113,11 @@ void tearDown(void) {
 
 int main(void) {
     UNITY_BEGIN();
-    printf("test_DecodeDescribedFormatCode \n");
     RUN_TEST(test_DecodeDescribedFormatCode);
-    printf("test_MessageParseApplicationDataV8 \n");
     RUN_TEST(test_MessageParseApplicationDataV8);
-    printf("test_MessageParseApplicationDataV32 \n");
     RUN_TEST(test_MessageParseApplicationDataV32);
-    printf("test_MessageParseApplicationDataFromFileBodyV8 \n");
     RUN_TEST(test_MessageParseApplicationDataFromFileBodyV8);
-    printf("test_MessageParseApplicationDataFromFileBody32 \n");
     RUN_TEST(test_MessageParseApplicationDataFromFileBody32);
-    printf("test_MessageParseApplicationDataFromFileUnicodeBody32 \n");
     RUN_TEST(test_MessageParseApplicationDataFromFileUnicodeBody32);
     return UNITY_END();
 }
