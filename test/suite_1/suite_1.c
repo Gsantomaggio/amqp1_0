@@ -82,7 +82,20 @@ void test_MessageParseApplicationDataFromFileBody32(void) {
     Message_t msg;
     parseAmqp10MessageBuffer(formatBuff, len, &msg);
     TEST_ASSERT_NOT_EMPTY(msg.data);
-    TEST_ASSERT_TRUE(sizeof(msg.data) == 700);
+    TEST_ASSERT_TRUE(strlen(msg.data) == 700);
+}
+
+
+void test_MessageParseApplicationDataFromFileUnicodeBody32(void) {
+    char formatBuff[1024];
+    long len;
+    readAmqpBufferFromFile("message_body_unicode_500_body", formatBuff, &len);
+    Message_t msg;
+    parseAmqp10MessageBuffer(formatBuff, len, &msg);
+    TEST_ASSERT_NOT_EMPTY(msg.data);
+    char expected[] =
+    "Alan Mathison Turing（1912 年 6 月 23 日 - 1954 年 6 月 7 日）是英国数学家、计算机科学家、逻辑学家、密码分析家、哲学家和理论生物学家。 [6] 图灵在理论计算机科学的发展中具有很大的影响力，用图灵机提供了算法和计算概念的形式化，可以被认为是通用计算机的模型。[7][8][9] 他被广泛认为是理论计算机科学和人工智能之父。 [10]";
+    TEST_ASSERT_EQUAL_CHAR_ARRAY(expected, msg.data, strlen(expected));
 }
 
 
@@ -102,5 +115,6 @@ int main(void) {
     RUN_TEST(test_MessageParseApplicationDataV32);
     RUN_TEST(test_MessageParseApplicationDataFromFileBodyV8);
     RUN_TEST(test_MessageParseApplicationDataFromFileBody32);
+    RUN_TEST(test_MessageParseApplicationDataFromFileUnicodeBody32);
     return UNITY_END();
 }

@@ -16,11 +16,9 @@ int read_char(char *source_buffer, char *out_value) {
 
 int read_int(char *source_buffer, uint32_t *out_value) {
     int offset = 0;
-    char tmp[sizeof(uint32_t)];
+    unsigned char tmp[sizeof(uint32_t)];
     memcpy(tmp, source_buffer + offset, sizeof(uint32_t));
     *out_value = (tmp[0] << 24) + (tmp[1] << 16) + (tmp[2] << 8) + tmp[3];
-    uint32_t c = (tmp[0] << 24) + (tmp[1] << 16) + (tmp[2] << 8) + tmp[3];
-    printf("%d", c);
     return offset + sizeof(uint32_t);
 }
 
