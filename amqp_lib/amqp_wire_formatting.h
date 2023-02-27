@@ -5,9 +5,10 @@
 #ifndef AMQP1_0_AMQP_WIRE_FORMATTING_H
 #define AMQP1_0_AMQP_WIRE_FORMATTING_H
 
+#include <stdlib.h>
 #include <string.h>
 #include <types.h>
-#include <stdlib.h>
+#include <stdint.h>
 
 int read_char(char *source_buffer, char *out_value);
 int read_int(char *source_buffer, uint32_t *out_value);
