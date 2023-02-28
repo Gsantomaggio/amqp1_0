@@ -52,6 +52,7 @@ void test_MessageParseApplicationDataV8(void) {
     parseAmqp10MessageBuffer(formatBuff, 6, &msg);
     TEST_ASSERT_NOT_EMPTY(msg.bodyAmqpData->body);
     TEST_ASSERT_EQUAL_CHAR(0x02, msg.bodyAmqpData->body[0]);
+    freeMessageFields(&msg);
 }
 
 void test_MessageParseApplicationDataV32(void) {
@@ -66,6 +67,7 @@ void test_MessageParseApplicationDataV32(void) {
     unsigned char expected[] = {0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x07, 0x08, 0x09};
     TEST_ASSERT_EQUAL_size_t((size_t) 9, msg.bodyAmqpData->body_len);
     TEST_ASSERT_EQUAL_CHAR_ARRAY(expected, msg.bodyAmqpData->body, 9);
+    freeMessageFields(&msg);
 }
 
 //
@@ -81,7 +83,9 @@ void test_MessageParseApplicationDataFromFileBodyV8(void) {
     ///
     TEST_ASSERT_EQUAL_size_t(strlen(expected), msg.bodyAmqpData->body_len);
     TEST_ASSERT_EQUAL_CHAR_ARRAY(expected, msg.bodyAmqpData->body, msg.bodyAmqpData->body_len);
+    freeMessageFields(&msg);
 }
+
 //
 void test_MessageParseApplicationDataFromFileBody32(void) {
     char formatBuff[1024];
@@ -91,7 +95,9 @@ void test_MessageParseApplicationDataFromFileBody32(void) {
     parseAmqp10MessageBuffer(formatBuff, len, &msg);
     TEST_ASSERT_NOT_EMPTY(msg.bodyAmqpData->body);
     TEST_ASSERT_TRUE(msg.bodyAmqpData->body_len == 700);
+    freeMessageFields(&msg);
 }
+
 //
 //
 void test_MessageParseApplicationDataFromFileUnicodeBody32(void) {
@@ -105,6 +111,7 @@ void test_MessageParseApplicationDataFromFileUnicodeBody32(void) {
             "Alan Mathison Turing（1912 年 6 月 23 日 - 1954 年 6 月 7 日）是英国数学家、计算机科学家、逻辑学家、密码分析家、哲学家和理论生物学家。 [6] 图灵在理论计算机科学的发展中具有很大的影响力，用图灵机提供了算法和计算概念的形式化，可以被认为是通用计算机的模型。[7][8][9] 他被广泛认为是理论计算机科学和人工智能之父。 [10]";
     TEST_ASSERT_EQUAL_size_t(strlen(expected), msg.bodyAmqpData->body_len);
     TEST_ASSERT_EQUAL_CHAR_ARRAY(expected, msg.bodyAmqpData->body, strlen(expected));
+    freeMessageFields(&msg);
 }
 
 

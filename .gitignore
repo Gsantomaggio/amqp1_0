@@ -60,4 +60,6 @@ CMakeFiles/
 cmake_install.cmake
 CTestTestfile.cmake
 CMakeCache.txt
+amqp1_0.cbp
+Makefile
 

@@ -4,6 +4,7 @@
 
 #ifndef AMQP1_0_TYPES_H
 #define AMQP1_0_TYPES_H
+
 #include <stdlib.h>
 
 #define APPLICATION_DATA  0x75
@@ -34,6 +35,7 @@ typedef struct {
     int size;
 
 } DescribedFormatCode, *PDescribedFormatCode;
+
 
 
 #endif //AMQP1_0_TYPES_H

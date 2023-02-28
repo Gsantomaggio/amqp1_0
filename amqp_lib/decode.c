@@ -3,6 +3,15 @@
 #include <types.h>
 
 
+void freeMessageFields(PMessage_t msg) {
+    if (msg->bodyAmqpData != NULL) {
+        if (msg->bodyAmqpData->body != NULL) {
+            free(msg->bodyAmqpData->body);
+        }
+        free(msg->bodyAmqpData);
+    }
+}
+
 size_t decodeDescribedFormatCode(char *source_buffer, PDescribedFormatCode out_described_format_code) {
     size_t offset = 0;
     offset += read_char(source_buffer, &out_described_format_code->v1);
@@ -28,8 +37,3 @@ size_t parseAmqp10MessageBuffer(char *source_buffer, long len, PMessage_t out_me
     }
     return 0;
 }
-
-
-
-
-
