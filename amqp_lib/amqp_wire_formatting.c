@@ -23,7 +23,6 @@ size_t read_int(char *source_buffer, uint32_t *out_value) {
 
 size_t read_buffer(char *source_buffer, char *out_value, size_t len) {
     memcpy(out_value, source_buffer, len);
-    out_value[len] = '\0';
     return len;
 }
 
