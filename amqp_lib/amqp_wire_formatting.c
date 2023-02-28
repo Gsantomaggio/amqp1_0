@@ -6,6 +6,7 @@
 #include "types.h"
 #include <string.h>
 #include <stdlib.h>
+#include <printf.h>
 
 size_t read_char(char *source_buffer, char *out_value) {
     int offset = 0;
@@ -38,15 +39,19 @@ size_t read_application_data(char *source_buffer, PMessage_t message) {
         case FORMAT_CODE_VBIN8: {
             char len;
             offset += read_char(source_buffer + offset, &len);
-            message->data = malloc(sizeof(char) * len);
-            offset += read_buffer(source_buffer + offset, message->data, len);
+            message->bodyAmqpData = malloc(sizeof(BODY_AMQP_DATA));
+            message->bodyAmqpData->body = malloc(sizeof(char) * len);
+            message->bodyAmqpData->body_len = len;
+            offset += read_buffer(source_buffer + offset, message->bodyAmqpData->body, len);
         }
             break;
         case FORMAT_CODE_Vbin32: {
             uint32_t len;
             offset += read_int(source_buffer + offset, &len);
-            message->data = malloc(sizeof(char) * len);
-            offset += read_buffer(source_buffer + offset, message->data, len);
+            message->bodyAmqpData = malloc(sizeof(BODY_AMQP_DATA));
+            message->bodyAmqpData->body = malloc(sizeof(char) * len);
+            message->bodyAmqpData->body_len = len;
+            offset += read_buffer(source_buffer + offset, message->bodyAmqpData->body, len);
         }
             break;
     }

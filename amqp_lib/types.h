@@ -4,7 +4,7 @@
 
 #ifndef AMQP1_0_TYPES_H
 #define AMQP1_0_TYPES_H
-
+#include <stdlib.h>
 
 #define APPLICATION_DATA  0x75
 //const char MessageAnnotations = 0x72;
@@ -17,9 +17,13 @@
 #define FORMAT_CODE_Vbin32 (char)0xb0
 
 
-typedef struct {
-    char *data;
+typedef struct BODY_AMQP_DATA_S {
+    char *body;
+    size_t body_len;
+} BODY_AMQP_DATA;
 
+typedef struct {
+    BODY_AMQP_DATA *bodyAmqpData;
 } Message_t, *PMessage_t;
 
 
