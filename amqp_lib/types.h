@@ -14,12 +14,12 @@
 //const char MessageHeader = 0x70;
 //const char AmqpValue = 0x77;
 
-#define FORMAT_CODE_VBIN8 (char)0xa0
-#define FORMAT_CODE_Vbin32 (char)0xb0
+#define FORMAT_CODE_VBIN8 (uint8_t)0xa0
+#define FORMAT_CODE_Vbin32 (uint8_t)0xb0
 
 
 typedef struct BODY_AMQP_DATA_S {
-    char *body;
+    unsigned char *body;
     size_t body_len;
 } BODY_AMQP_DATA;
 
@@ -29,10 +29,10 @@ typedef struct {
 
 
 typedef struct {
-    char v1;
-    char v2;
-    char formatCode;
-    int size;
+    unsigned char v1;
+    unsigned char v2;
+    unsigned char formatCode;
+    size_t size;
 
 } DescribedFormatCode, *PDescribedFormatCode;
 

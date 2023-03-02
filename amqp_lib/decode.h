@@ -6,9 +6,9 @@
 #include <stdlib.h>
 
 
-size_t parseAmqp10MessageBuffer(char *source_buffer, long len, PMessage_t out_message);
+size_t parse_amqp10_message_buffer(unsigned char *source_buffer, long len, PMessage_t out_message);
 
-size_t decodeDescribedFormatCode(char *source_buffer, PDescribedFormatCode out_described_format_code);
+size_t decodeDescribedFormatCode(unsigned char *source_buffer, PDescribedFormatCode out_described_format_code);
 
 void freeMessageFields(PMessage_t msg);
 
