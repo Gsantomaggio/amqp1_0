@@ -1,4 +1,4 @@
-#add_subdirectory(resources)
+add_subdirectory(resources)
 add_executable(suite_1_app
         suite_1.c
         )
