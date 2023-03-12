@@ -11,70 +11,70 @@
 				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Experimental">
-				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 Experimental"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Nightly">
-				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 Nightly"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="Continuous">
-				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 Continuous"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="test">
-				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 test"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="test">
+				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 test"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Nightly">
+				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 Nightly"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Continuous">
+				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 Continuous"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="Experimental">
+				<Option working_dir="/Users/gas/git/gsantomaggio/amqp1_0"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 Experimental"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="amqp_lib">
@@ -85,17 +85,12 @@
 				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 amqp_lib"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 amqp_lib"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="amqp_lib/fast">
@@ -106,17 +101,12 @@
 				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 amqp_lib/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 amqp_lib/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Unity">
@@ -127,17 +117,12 @@
 				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="/Users/gas/git/gsantomaggio/amqp1_0/external/Unity/src"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 Unity"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 Unity"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Unity/fast">
@@ -148,17 +133,12 @@
 				<Option compiler="clang"/>
 				<Compiler>
 					<Add directory="/Users/gas/git/gsantomaggio/amqp1_0/external/Unity/src"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 Unity/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 Unity/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/external/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="suite_1_app">
@@ -170,17 +150,12 @@
 				<Compiler>
 					<Add directory="/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib"/>
 					<Add directory="/Users/gas/git/gsantomaggio/amqp1_0/external/Unity/src"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 suite_1_app"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 suite_1_app"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="suite_1_app/fast">
@@ -192,17 +167,12 @@
 				<Compiler>
 					<Add directory="/Users/gas/git/gsantomaggio/amqp1_0/amqp_lib"/>
 					<Add directory="/Users/gas/git/gsantomaggio/amqp1_0/external/Unity/src"/>
-					<Add directory="/usr/local/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/14.0.0/include"/>
-					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 suite_1_app/fast"/>
-					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 suite_1_app/fast"/>
+					<CompileFile command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/local/bin/gmake -f &quot;/Users/gas/git/gsantomaggio/amqp1_0/test/suite_1/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
