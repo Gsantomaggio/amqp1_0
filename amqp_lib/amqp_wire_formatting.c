@@ -8,13 +8,13 @@
 #include <stdlib.h>
 #include <printf.h>
 
-size_t read_char(unsigned char *source_buffer, unsigned char *out_value) {
+size_t read_char(const unsigned char *source_buffer, unsigned char *out_value) {
     int offset = 0;
     memcpy(out_value, source_buffer + offset, sizeof(char));
     return offset + sizeof(char);
 }
 
-size_t read_int(unsigned char *source_buffer, uint32_t *out_value) {
+size_t read_int(const unsigned char *source_buffer, uint32_t *out_value) {
     unsigned char tmp[sizeof(uint32_t)];
     memcpy(tmp, source_buffer, sizeof(uint32_t));
     *out_value = (tmp[0] << 24) + (tmp[1] << 16) + (tmp[2] << 8) + tmp[3];
@@ -22,16 +22,16 @@ size_t read_int(unsigned char *source_buffer, uint32_t *out_value) {
 }
 
 
-size_t read_buffer(unsigned char *source_buffer, unsigned char *out_value, size_t len) {
+size_t read_buffer(const unsigned char *source_buffer, unsigned char *out_value, size_t len) {
     memcpy(out_value, source_buffer, len);
     return len;
 }
 
-size_t read_type(unsigned char *source_buffer, unsigned char *out_type) {
+size_t read_type(const unsigned char *source_buffer, unsigned char *out_type) {
     return read_char(source_buffer, out_type);
 }
 
-size_t read_application_data(unsigned char *source_buffer, PMessage_t message) {
+size_t read_application_data(const unsigned char *source_buffer, PMessage_t message) {
     size_t offset = 0;
     unsigned char type;
     offset += read_type(source_buffer, &type);

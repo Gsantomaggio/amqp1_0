@@ -7,19 +7,19 @@
 
 #include <stdlib.h>
 
-#define APPLICATION_DATA  0x75
+#define APPLICATION_DATA (unsigned char) 0x75
 //const char MessageAnnotations = 0x72;
 //const char MessageProperties = 0x73;
 //const char ApplicationProperties = 0x74;
 //const char MessageHeader = 0x70;
 //const char AmqpValue = 0x77;
 
-#define FORMAT_CODE_VBIN8 (uint8_t)0xa0
-#define FORMAT_CODE_Vbin32 (uint8_t)0xb0
+#define FORMAT_CODE_VBIN8 (unsigned char)0xa0
+#define FORMAT_CODE_Vbin32 (unsigned char)0xb0
 
 
 typedef struct BODY_AMQP_DATA_S {
-    unsigned char *body;
+    unsigned char *body; 
     size_t body_len;
 } BODY_AMQP_DATA;
 

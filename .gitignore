@@ -62,4 +62,6 @@ CTestTestfile.cmake
 CMakeCache.txt
 amqp1_0.cbp
 Makefile
-
+crash*
+fuzzing
+FTS/

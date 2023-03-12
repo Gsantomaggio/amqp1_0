@@ -47,9 +47,11 @@ void test_DecodeDescribedFormatCode(void) {
 }
 
 void test_MessageParseApplicationDataV8(void) {
-    unsigned char formatBuff[] = {0x03, 0x11, APPLICATION_DATA, FORMAT_CODE_VBIN8, 0x01, 0x02};
+//    unsigned char formatBuff[] = {0x03, 0x11, APPLICATION_DATA, FORMAT_CODE_VBIN8, 0x01, 0x02};
+    unsigned char formatBuff[] = {0x3, 0x11, 0x75, 0xa0, 0x1, 0x2, 0x2a, 0x03, 0x11u, 0xa0, 0x01, 0x02};
     Message_t msg;
     parse_amqp10_message_buffer(formatBuff, 6, &msg);
+
     TEST_ASSERT_NOT_EMPTY(msg.bodyAmqpData->body);
     TEST_ASSERT_EQUAL_CHAR(0x02, msg.bodyAmqpData->body[0]);
     freeMessageFields(&msg);
