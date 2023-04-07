@@ -2,11 +2,10 @@
 // Created by Gabriele Santomaggio on 19/02/23.
 //
 
-#include "amqp_wire_formatting.h"
-#include "types.h"
 #include <string.h>
 #include <stdlib.h>
-#include <printf.h>
+#include "amqp_wire_formatting.h"
+#include "types.h"
 
 size_t read_char(const unsigned char *source_buffer, unsigned char *out_value) {
     int offset = 0;
