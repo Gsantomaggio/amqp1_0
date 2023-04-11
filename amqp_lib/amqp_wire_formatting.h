@@ -9,7 +9,7 @@
 #include <message.h>
 
 size_t read_char(const unsigned char *source_buffer, unsigned char *out_value);
-size_t read_int(const unsigned char *source_buffer, uint32_t *out_value);
+size_t read_int(const unsigned char *source_buffer, unsigned int *out_value);
 size_t read_type(const unsigned char *source_buffer, unsigned char *out_value);
 
 size_t read_buffer(const unsigned char *source_buffer, unsigned char *out_value, size_t len);

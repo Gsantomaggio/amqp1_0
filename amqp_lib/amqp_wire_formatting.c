@@ -15,11 +15,11 @@ size_t read_char(const unsigned char *source_buffer, unsigned char *out_value) {
     return offset + sizeof(char);
 }
 
-size_t read_int(const unsigned char *source_buffer, uint32_t *out_value) {
-    unsigned char tmp[sizeof(uint32_t)];
-    memcpy(tmp, source_buffer, sizeof(uint32_t));
+size_t read_int(const unsigned char *source_buffer, unsigned int *out_value) {
+    unsigned char tmp[sizeof(unsigned int)];
+    memcpy(tmp, source_buffer, sizeof(unsigned int));
     *out_value = (tmp[0] << 24) + (tmp[1] << 16) + (tmp[2] << 8) + tmp[3];
-    return sizeof(uint32_t);
+    return sizeof(unsigned int);
 }
 
 size_t read_buffer(const unsigned char *source_buffer, unsigned char *out_value, size_t len) {
