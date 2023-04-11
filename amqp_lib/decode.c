@@ -1,7 +1,6 @@
 #include "message.h"
 #include "amqp_wire_formatting.h"
-#include <types.h>
-#include <printf.h>
+#include "types.h"
 
 
 
