@@ -1,11 +1,11 @@
 add_subdirectory(resources)
-add_executable(suite_1_app
-        suite_1.c
+add_executable(message_encode_decode
+        message_encode_decode.c
         )
 
-target_link_libraries(suite_1_app
+target_link_libraries(message_encode_decode
         amqp_lib
         Unity
         )
 
-add_test(suite_1_test suite_1_app)
+add_test(suite_1_test message_encode_decode)

@@ -18,23 +18,6 @@
 #define FORMAT_CODE_Vbin32 (unsigned char)0xb0
 
 
-typedef struct BODY_AMQP_DATA_S {
-    unsigned char *body; 
-    size_t body_len;
-} BODY_AMQP_DATA;
-
-typedef struct {
-    BODY_AMQP_DATA *bodyAmqpData;
-} Message_t, *PMessage_t;
-
-
-typedef struct {
-    unsigned char v1;
-    unsigned char v2;
-    unsigned char formatCode;
-    size_t size;
-
-} DescribedFormatCode, *PDescribedFormatCode;
 
 
 

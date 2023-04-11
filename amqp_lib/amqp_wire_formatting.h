@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <types.h>
+#include <message.h>
 #include <stdint.h>
 
 size_t read_char(const unsigned char *source_buffer, uint8_t *out_value);
