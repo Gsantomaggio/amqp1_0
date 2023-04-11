@@ -5,7 +5,7 @@
 #include "amqp_wire_formatting.h"
 #include "types.h"
 #include "message.h"
-#include <stdlib.h>
+#include <string.h>
 
 size_t read_char(const unsigned char *source_buffer, unsigned char *out_value) {
     int offset = 0;
