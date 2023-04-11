@@ -2,6 +2,7 @@
 #include <stddef.h>
 #include  <stdio.h>
 #include <decode.h>
+#include <message.h>
 
 
 int FuzzMe(const uint8_t *Data, size_t DataSize) {
@@ -15,8 +16,8 @@ int FuzzMe(const uint8_t *Data, size_t DataSize) {
         Data[5] == 0x02
             ) {
         Message_t msg;
-        parse_amqp10_message_buffer(Data, DataSize, &msg);
-        freeMessageFields(&msg);
+        read_amqp1_0_from_buffer(Data, DataSize, &msg);
+        free_message_fields(&msg);
         return 0;
     }
     return 1;

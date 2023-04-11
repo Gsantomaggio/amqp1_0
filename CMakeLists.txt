@@ -13,8 +13,8 @@ add_subdirectory(external)
 add_subdirectory(test)
 
 #if (FUZZ)
-#    ## https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md
-#    message("--- Build with FUZZ")
-#    add_subdirectory(fuzz)
+## https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md
+message("--- Build with FUZZ")
+add_subdirectory(fuzz)
 #endif ()
 
