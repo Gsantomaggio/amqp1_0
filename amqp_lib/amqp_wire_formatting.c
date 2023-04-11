@@ -6,6 +6,8 @@
 #include "types.h"
 #include "message.h"
 #include <string.h>
+#include <stdint.h>
+
 
 size_t read_char(const unsigned char *source_buffer, unsigned char *out_value) {
     int offset = 0;
