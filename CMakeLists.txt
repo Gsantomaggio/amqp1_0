@@ -5,16 +5,25 @@ option(FUZZ "Build With FUZZ" ON)
 
 set(CMAKE_C_COMPILER clang)
 set(CMAKE_CXX_COMPILER clang)
+
 add_subdirectory(amqp_lib)
 
 
-include(CTest)
-add_subdirectory(external)
-add_subdirectory(test)
+option(TESTS "Enable the tests" ON)
+
+if (TESTS)
+    include(CTest)
+    add_subdirectory(external)
+    add_subdirectory(test)
+endif ()
+
+
+unset(TESTS CACHE)
+
 
 #if (FUZZ)
 ## https://github.com/google/fuzzing/blob/master/tutorial/libFuzzerTutorial.md
-message("--- Build with FUZZ")
-add_subdirectory(fuzz)
+#message("--- Build with FUZZ")
+#add_subdirectory(fuzz)
 #endif ()
 
