@@ -12,6 +12,10 @@ $ make
 # Test
 
 ```shell
+$ cmake -DTESTS=ON . 
+```
+
+```shell
 $ ctest --extra-verbose .
 ```
 
