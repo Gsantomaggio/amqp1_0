@@ -41,7 +41,6 @@ int message_size(PMessage_t message) {
     size += sizeof(char); // type Vbin8
     if (message->bodyAmqpData->body_len <= 255) {
         size += sizeof(char); // body_len it is a byte
-
     } else {
         size += sizeof(int); // body_len it is an int
     }
@@ -93,9 +92,11 @@ MESSAGE_DATA Marshal(PMessage_t message) {
     MESSAGE_DATA result;
     result.payload = malloc(sizeof(unsigned char) * buffer_size);
     result.payload_len = buffer_size;
-    PDescribedFormatCode pDescribedFormatCode;
-    pDescribedFormatCode->formatCode = APPLICATION_DATA;
-    int offset = marshal_described_format_code(pDescribedFormatCode, result.payload);
+    DescribedFormatCode describedFormatCode;
+    describedFormatCode.formatCode = APPLICATION_DATA;
+    describedFormatCode.v1 = 0;
+    describedFormatCode.v2 = 0;
+    int offset = marshal_described_format_code(&describedFormatCode, result.payload);
     if (message->bodyAmqpData->body_len <= 255) {
         offset += write_char(FORMAT_CODE_VBIN8, result.payload + offset);
         offset += write_char(message->bodyAmqpData->body_len, result.payload + offset);

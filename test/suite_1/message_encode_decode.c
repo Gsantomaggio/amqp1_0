@@ -81,7 +81,7 @@ void test_message_marshal_unmarshal_application_data_v8(void) {
     MESSAGE_DATA buff = Marshal(&msgSource);
     Message_t msgDestination;
     Unmarshal(buff.payload, buff.payload_len, &msgDestination);
-
+//
     TEST_ASSERT_NOT_EMPTY(msgDestination.bodyAmqpData->body);
     TEST_ASSERT_EQUAL_CHAR_ARRAY("1234567890",
                                  msgDestination.bodyAmqpData->body,
