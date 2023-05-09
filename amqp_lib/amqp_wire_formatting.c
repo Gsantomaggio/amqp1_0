@@ -53,6 +53,27 @@ size_t read_application_data(const unsigned char *source_buffer, PMessage_t mess
     }
 
     return offset;
-
 }
+
+
+int write_pchar(const unsigned char *source_char, unsigned char *destination_char) {
+    memcpy(destination_char, source_char, sizeof(char));
+    return sizeof(char);
+}
+
+int write_char(const unsigned char source_char, unsigned char *destination_char) {
+    memcpy(destination_char, &source_char, sizeof(char));
+    return sizeof(char);
+}
+
+int write_int(const int source, unsigned char *destination_char) {
+    memcpy(destination_char, &source, sizeof(int));
+    return sizeof(int);
+}
+
+int write_chars(const unsigned char *source_char, unsigned char *destination_char, size_t len) {
+    memcpy(destination_char, source_char, len);
+    return len;
+}
+
 
