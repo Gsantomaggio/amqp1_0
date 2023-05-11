@@ -33,7 +33,7 @@ typedef struct MESSAGE_DATA_S {
 } MESSAGE_DATA;
 
 
-DescribedFormatCode CreateDescribedFormatCode(unsigned char formatCode);
+Message_t CreateMessage_t(unsigned char *body, int body_len);
 
 int described_format_code_size();
 

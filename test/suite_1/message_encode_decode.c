@@ -75,15 +75,14 @@ void test_message_unmarshal_application_data_v8(void) {
 
 
 void test_message_marshal_unmarshal_application_data_v8(void) {
-    Message_t msgSource;
-    malloc_amqp_data(&msgSource, 10);
-    memcpy(msgSource.bodyAmqpData->body, "1234567890", msgSource.bodyAmqpData->body_len);
+    unsigned char body[] = {0x01, 0x02, 0x03, 0x02, 0x05, 0x06, 0x07};
+    Message_t msgSource = CreateMessage_t(body, 7);
     MESSAGE_DATA buff = Marshal(&msgSource);
     Message_t msgDestination;
     Unmarshal(buff.payload, buff.payload_len, &msgDestination);
 //
     TEST_ASSERT_NOT_EMPTY(msgDestination.bodyAmqpData->body);
-    TEST_ASSERT_EQUAL_CHAR_ARRAY("1234567890",
+    TEST_ASSERT_EQUAL_CHAR_ARRAY(body,
                                  msgDestination.bodyAmqpData->body,
                                  msgSource.bodyAmqpData->body_len);
     free_message_fields(&msgSource);

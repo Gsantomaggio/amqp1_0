@@ -5,16 +5,16 @@
 #include "message.h"
 #include "amqp_wire_formatting.h"
 #include "types.h"
+#include <string.h>
 
 
-DescribedFormatCode CreateDescribedFormatCode(unsigned char formatCode) {
-    DescribedFormatCode result;
-    result.formatCode = formatCode;
-    result.v1 = 0;
-    result.v2 = 0;
-    result.size = sizeof(unsigned char) + sizeof(unsigned char) + sizeof(unsigned char);
+Message_t CreateMessage_t(unsigned char *body, int body_len) {
+    Message_t result;
+    malloc_amqp_data(&result, body_len);
+    memcpy(result.bodyAmqpData->body, body, body_len);
+    result.bodyAmqpData->body_len = body_len;
     return result;
-};
+}
 
 int described_format_code_size() {
     return sizeof(unsigned char) + sizeof(unsigned char) + sizeof(unsigned char);

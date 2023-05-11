@@ -3,8 +3,7 @@ cmake_minimum_required(VERSION 3.10)
 set(TARGET_GROUP production CACHE STRING "Group to build")
 option(FUZZ "Build With FUZZ" ON)
 
-set(CMAKE_C_COMPILER clang)
-set(CMAKE_CXX_COMPILER clang)
+set(CMAKE_C_STANDARD 11)
 
 add_subdirectory(amqp_lib)
 
