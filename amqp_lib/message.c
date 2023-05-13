@@ -7,8 +7,7 @@
 #include "types.h"
 #include <string.h>
 
-
-Message_t CreateMessage_t(unsigned char *body, int body_len) {
+Message_t CreateMessage_t(unsigned char *body, size_t body_len) {
     Message_t result;
     malloc_amqp_data(&result, body_len);
     memcpy(result.bodyAmqpData->body, body, body_len);
@@ -16,7 +15,7 @@ Message_t CreateMessage_t(unsigned char *body, int body_len) {
     return result;
 }
 
-int described_format_code_size() {
+size_t described_format_code_size() {
     return sizeof(unsigned char) + sizeof(unsigned char) + sizeof(unsigned char);
 }
 
@@ -35,9 +34,8 @@ void malloc_amqp_data(PMessage_t msg, size_t __size) {
     msg->bodyAmqpData->body_len = __size;
 }
 
-
-int message_size(PMessage_t message) {
-    int size = described_format_code_size();
+size_t message_size(PMessage_t message) {
+    size_t size = described_format_code_size();
     size += sizeof(char); // type Vbin8
     if (message->bodyAmqpData->body_len <= 255) {
         size += sizeof(char); // body_len it is a byte
@@ -48,10 +46,9 @@ int message_size(PMessage_t message) {
     return size;
 }
 
-
 int unmarshal_described_format_code(const unsigned char *source_buffer,
                                     PDescribedFormatCode out_described_format_code) {
-    int offset = 0;
+    size_t offset = 0;
     offset += read_char(source_buffer, &out_described_format_code->v1);
     offset += read_char(source_buffer + offset, &out_described_format_code->v2);
     offset += read_char(source_buffer + offset, &out_described_format_code->formatCode);
@@ -59,7 +56,7 @@ int unmarshal_described_format_code(const unsigned char *source_buffer,
     return 0;
 }
 
-int Unmarshal(const unsigned char *source_buffer, long len, PMessage_t out_message) {
+int Unmarshal(const unsigned char *source_buffer, size_t len, PMessage_t out_message) {
     size_t offset = 0;
     if (len < 0) {
         return 1;
@@ -86,9 +83,8 @@ int Unmarshal(const unsigned char *source_buffer, long len, PMessage_t out_messa
     return 0;
 }
 
-
 MESSAGE_DATA Marshal(PMessage_t message) {
-    int buffer_size = message_size(message);
+    size_t buffer_size = message_size(message);
     MESSAGE_DATA result;
     result.payload = malloc(sizeof(unsigned char) * buffer_size);
     result.payload_len = buffer_size;
@@ -96,13 +92,13 @@ MESSAGE_DATA Marshal(PMessage_t message) {
     describedFormatCode.formatCode = APPLICATION_DATA;
     describedFormatCode.v1 = 0;
     describedFormatCode.v2 = 0;
-    int offset = marshal_described_format_code(&describedFormatCode, result.payload);
+    size_t offset = marshal_described_format_code(&describedFormatCode, result.payload);
     if (message->bodyAmqpData->body_len <= 255) {
         offset += write_char(FORMAT_CODE_VBIN8, result.payload + offset);
-        offset += write_char(message->bodyAmqpData->body_len, result.payload + offset);
+        offset += write_char((const unsigned char)message->bodyAmqpData->body_len, result.payload + offset);
     } else {
         offset += write_char(FORMAT_CODE_Vbin32, result.payload + offset);
-        offset += write_int(message->bodyAmqpData->body_len, result.payload + offset);
+        offset += write_int((const int)message->bodyAmqpData->body_len, result.payload + offset);
     }
     write_chars(message->bodyAmqpData->body, result.payload + offset, message->bodyAmqpData->body_len);
     return result;
